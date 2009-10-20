@@ -96,7 +96,7 @@ module ExceptionNotifiable
           notification = ExceptionNotifier.create_exception_notification(exception, self,
             request, data)
           logger.info("sending data to shooter")
-          RestClient.put("http://shooter/api/shooters/#{ExceptionNotifier.api_key}", {:payload => notification.body})
+          RestClient.put("http://shooterapi.com/api/shooters/#{ExceptionNotifier.api_key}", {:payload => notification.body})
       end
     end
 end
